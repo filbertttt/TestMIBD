@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Pemilik</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="pemilik-dashboard">
+
+  <!-- Header -->
+  <div class="header">
+    <h2>Welcome!</h2>
+    <button class="icon-button" onclick="showLogoutModal()">
+      <img src="icon-logout.svg" alt="Logout" />
+    </button>
+  </div>
+
+  <!-- Unit List -->
+  <div class="unit-list">
+    <div class="unit-card">
+      <div class="unit-header">
+        <h3>Unit 1</h3>
+        <button class="status-btn off" onclick="toggleStatus(this)"></button>
+      </div>
+      <p>No Unit: Txx01</p>
+      <p>Tipe Perangkat: XXXXX</p>
+      <button class="total-btn" onclick="window.location.href='history.html'">Total Pemakaian Air</button>
+    </div>
+
+    <div class="unit-card">
+      <div class="unit-header">
+        <h3>Unit 2</h3>
+        <button class="status-btn on" onclick="toggleStatus(this)"></button>
+      </div>
+      <p>No Unit: Txx02</p>
+      <p>Tipe Perangkat: XXXXX</p>
+      <button class="total-btn" onclick="window.location.href='history.html'">Total Pemakaian Air</button>
+    </div>
+
+    <div class="unit-card">
+      <div class="unit-header">
+        <h3>Unit 3</h3>
+        <button class="status-btn off" onclick="toggleStatus(this)"></button>
+      </div>
+      <p>No Unit: Txx03</p>
+      <p>Tipe Perangkat: XXXXX</p>
+      <button class="total-btn" onclick="window.location.href='history.html'">Total Pemakaian Air</button>
+    </div>
+  </div>
+
+  <!-- Logout Modal -->
+  <div id="logoutModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-icon">❗</div>
+      <h3>Are you logging out?</h3>
+      <p>You can always log back in at any time</p>
+      <div class="modal-buttons">
+        <button onclick="cancelLogout()" class="cancel-btn">Cancel</button>
+        <button onclick="confirmLogout()" class="logout-btn">Log out</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleStatus(btn) {
+      btn.classList.toggle('on');
+      btn.classList.toggle('off');
+    }
+
+    function showLogoutModal() {
+      document.getElementById('logoutModal').classList.remove('hidden');
+    }
+
+    function cancelLogout() {
+      document.getElementById('logoutModal').classList.add('hidden');
+    }
+
+    function confirmLogout() {
+      window.location.href = "index.html"; // kembali ke role selection
+    }
+  </script>
+</body>
+</html>

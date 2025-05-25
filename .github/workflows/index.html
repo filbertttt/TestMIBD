@@ -1,0 +1,27 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pilih Role</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header"></div>
+    <div class="card">
+      <h1>Welcome!</h1>
+      <button class="role-button" onclick="goToLogin('Admin')">Admin</button>
+      <button class="role-button" onclick="goToLogin('Pengelola')">Pengelola</button>
+      <button class="role-button" onclick="goToLogin('Pemilik')">Pemilik</button>
+    </div>
+  </div>
+  <script>
+    function goToLogin(role) {
+      localStorage.setItem("selectedRole", role);
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

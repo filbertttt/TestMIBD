@@ -1,0 +1,362 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.header {
+  background-color: #2f4e93;
+  height: 200px;
+  width: 100%;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+.card {
+  background-color: #fff;
+  margin-top: -120px;
+  padding: 40px 30px;
+  border-radius: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+  max-width: 90%;
+}
+
+.card h1, .card h2 {
+  font-size: 1.8rem;
+  color: #2f4e93;
+}
+
+.card p {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+input[type="email"], input[type="password"], .phone-input input {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.phone-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid #ccc;
+  padding: 8px 10px;
+  border-radius: 15px;
+  margin: 10px 0;
+}
+
+.phone-input span {
+  color: #555;
+  font-weight: bold;
+}
+
+.otp-input {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.otp-input input {
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+}
+
+.role-button, .main-btn {
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 15px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.role-button {
+  background: transparent;
+  border: 2px solid #6c5ce7;
+  color: #6c5ce7;
+}
+
+.role-button:hover {
+  background-color: #6c5ce7;
+  color: white;
+}
+
+.main-btn {
+  background-color: #2f4e93;
+  color: white;
+  border: none;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.social-login {
+  margin-top: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.admin-dashboard .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2b4a93;
+  padding: 20px;
+  color: #fff;
+}
+
+.pengelola-dashboard .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2b4a93;
+  padding: 20px;
+  color: #fff;
+}
+
+.pemilik-dashboard .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2b4a93;
+  padding: 20px;
+  color: #fff;
+}
+
+.unit-list {
+  padding: 20px;
+}
+
+.unit-card {
+  background: white;
+  padding: 15px;
+  border-radius: 16px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.unit-card h3 {
+  margin-top: 0;
+  color: #2b4a93;
+}
+
+.total-btn {
+  background: #2b4a93;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.switch {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.slider {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.4s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #f00;
+}
+
+input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+.history-page {
+  padding: 20px;
+}
+
+.filters select {
+  margin: 5px;
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.water-usage-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.water-usage-table th, .water-usage-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.tower-filter {
+  padding: 0 20px;
+  margin-bottom: 10px;
+}
+
+.tower-filter select {
+  padding: 8px;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
+/* Tombol status on/off bulat */
+.status-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.status-btn.off {
+  background-color: red;
+}
+
+.status-btn.on {
+  background-color: green;
+}
+.unit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Tombol status bulat */
+.status-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.status-btn.off {
+  background-color: white;
+  border-color: red;
+}
+
+.status-btn.on {
+  background-color: green;
+  border-color: green;
+}
+
+/* Modal style */
+.modal.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 15px;
+  padding: 20px 25px;
+  text-align: center;
+  width: 80%;
+  max-width: 300px;
+}
+
+.modal-icon {
+  font-size: 40px;
+  color: green;
+  margin-bottom: 10px;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-btn, .logout-btn {
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: white;
+  border: 2px solid green;
+  color: green;
+}
+
+.logout-btn {
+  background-color: green;
+  color: white;
+}
+
+

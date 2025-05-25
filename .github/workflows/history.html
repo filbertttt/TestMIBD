@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riwayat Pemakaian Air</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="history-page">
+  <button class="back-btn" onclick="window.history.back()">←</button>
+  <h2>Total</h2>
+
+  <div class="filters">
+    <select id="year-select">
+      <option>2025</option>
+      <option>2024</option>
+    </select>
+    <select id="month-select">
+      <option value="05">Mei</option>
+      <option value="04">April</option>
+    </select>
+    <select id="day-select">
+      <option value="">Semua</option>
+      <option value="21">21</option>
+      <option value="22">22</option>
+      <option value="23">23</option>
+      <option value="24">24</option>
+    </select>
+  </div>
+
+  <table class="water-usage-table">
+    <thead>
+      <tr>
+        <th>Tanggal</th>
+        <th>Total Pemakaian Air (Liter)</th>
+      </tr>
+    </thead>
+    <tbody id="usage-body">
+      <tr><td>May 21, 2025</td><td>600</td></tr>
+      <tr><td>May 22, 2025</td><td>475</td></tr>
+      <tr><td>May 23, 2025</td><td>555</td></tr>
+      <tr><td>May 24, 2025</td><td>360</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    document.querySelectorAll('select').forEach(sel => {
+      sel.addEventListener('change', () => {
+        const year = document.getElementById('year-select').value;
+        const month = document.getElementById('month-select').value;
+        const day = document.getElementById('day-select').value;
+        const rows = document.querySelectorAll('#usage-body tr');
+
+        rows.forEach(row => {
+          const date = new Date(row.cells[0].innerText);
+          const matchYear = date.getFullYear().toString() === year;
+          const matchMonth = ('0' + (date.getMonth() + 1)).slice(-2) === month;
+          const matchDay = !day || date.getDate().toString() === day;
+          row.style.display = (matchYear && matchMonth && matchDay) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

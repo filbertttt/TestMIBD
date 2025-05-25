@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Verify OTP</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header"></div>
+    <div class="card">
+      <h2><strong>Verify Code</strong></h2>
+      <p>Masukkan 4 digit kode OTP yang dikirim ke<br />+62 81234567890</p>
+      <div class="otp-input">
+        <input maxlength="1" /><input maxlength="1" /><input maxlength="1" /><input maxlength="1" />
+      </div>
+      <p><small>Tidak menerima kode? <a href="#">Resend code</a></small></p>
+      <button class="main-btn" onclick="verifyOTP()">Verify & Continue</button>
+      <div class="social-login">
+        <div class="social-icons">
+          <img src="https://img.icons8.com/color/48/google-logo.png" />
+          <img src="https://img.icons8.com/color/48/facebook.png" />
+          <img src="https://img.icons8.com/ios-filled/50/mac-os.png" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function verifyOTP() {
+      // Sederhana: cek apakah semua input diisi
+      const inputs = document.querySelectorAll(".otp-input input");
+      const filled = [...inputs].every(input => input.value !== "");
+      if (filled) {
+        window.location.href = "verified.html";
+      } else {
+        alert("Isi semua kotak OTP!");
+      }
+    }
+  </script>
+</body>
+</html>

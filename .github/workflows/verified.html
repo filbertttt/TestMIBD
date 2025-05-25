@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Verified</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header"></div>
+    <div class="card">
+      <h2 style="color: green">✅ Verified!</h2>
+      <p>Anda berhasil login sebagai <strong id="role"></strong>.</p>
+    </div>
+  </div>
+  <script>
+    document.getElementById("role").textContent = localStorage.getItem("selectedRole") || "Pengguna";
+  </script>
+</body>
+<script>
+  // Simulasi keberhasilan verifikasi kode OTP
+  window.onload = function () {
+    setTimeout(() => {
+      alert("Verified!");
+
+      const role = localStorage.getItem('selectedRole');
+      
+      if (role === "Admin") {
+        window.location.href = "admin.html";
+      } else if (role === "Pengelola") {
+        window.location.href = "pengelola.html";
+      } else if (role === "Pemilik") {
+        window.location.href = "pemilik.html";
+      } else {
+        alert("Role tidak dikenali.");
+      }
+    }, 1000); // Delay untuk simulasi verifikasi
+  }
+</script>
+</html>
